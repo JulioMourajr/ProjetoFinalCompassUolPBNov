@@ -118,7 +118,7 @@ Imagine que você está mudando de casa. Em vez de reformar completamente a nova
 - **NAT (Network Address Translation)**: Serviço de tradução de endereços de rede.
 - **Backup**: Serviço de backup.
 
-![Modernização](./ArquiteturaModerna.png)
+![Modernização](./Eks.png)
 
 ## Modernização: Explicação das Ferramentas
 
