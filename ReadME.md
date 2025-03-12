@@ -30,6 +30,15 @@ Imagine que você está mudando de casa. Em vez de reformar completamente a nova
 - AWS DMS (Database Migration Service)
 - Load Balancer
 
+### Pré-requisitos
+
+- **Sub-rede da Área de Teste**: Antes de configurar o Application Migration Service, crie uma sub-rede para ser usada como área de preparação para dados replicados dos seus servidores de origem para AWS (ou seja, um plano de dados). Você deve especificar essa sub-rede no modelo de Configurações de Replicação ao acessar pela primeira vez o console do Application Migration Service.
+- **Requisitos de Rede**:
+    - Os servidores de replicação que são iniciados pelo Serviço de Migração de Aplicativos na sub-rede da sua área de armazenamento precisam ser capazes de enviar dados para o endpoint da API do Serviço de Migração de Aplicativos em `https://mgn.<region>.amazonaws.com/`, onde `<region>` é o código da região da AWS para a qual você está replicando (por exemplo, se sua aplicação está no norte da virgina: `https://mgn.us-east-1.amazonaws.com`).
+    - O instalador do AWS Replication Agent deve ter acesso à URL do bucket do Amazon S3 da região da AWS que você está usando com o Application Migration Service.
+    - A sub-rede da área de armazenamento deve ter acesso ao Amazon S3.
+    - Os servidores de origem nos quais o Agente de AWS Replicação está instalado devem ser capazes de enviar dados para os servidores de replicação na sub-rede da área de armazenamento e para o endpoint da API do Application Migration Service em `https://mgn.<region>.amazonaws.com/`.
+
 ### Atividades Necessárias
 
 #### Migração "Lift-and-Shift": Passo a Passo
@@ -46,7 +55,27 @@ Imagine que você está mudando de casa. Em vez de reformar completamente a nova
         - Certifique-se de que os servidores locais e os servidores de replicação MGN possam se comunicar com os endpoints do AWS MGN na porta 443.
         - Configure regras de segurança no seu VPC para permitir o tráfego necessário.
 
-2. **Replicação e Migração dos Servidores**:
+2. **Configuração dos Endpoints de Interface**:
+    - **Endpoint da Interface para o Application Migration Service**:
+        - Abra o console da Amazon VPC.
+        - No painel de navegação, escolha Endpoints e depois Create Endpoint.
+        - Em Service category, escolha AWS Services.
+        - Em Service Name, digite `com.amazonaws.<region>.mgn` e selecione Interface como o tipo.
+        - Para VPC, selecione a VPC de destino.
+        - Em Subnets, selecione as sub-redes onde criar as interfaces de rede do endpoint.
+        - Ative o DNS privado para o endpoint da interface.
+        - Selecione um grupo de segurança que permita a entrada da sub-rede VPC da área de armazenamento via TCP 443.
+        - Escolha Create Endpoint.
+    - **Endpoint da Interface para a Amazon EC2**:
+        - Siga as mesmas instruções acima, mas em Service Name, digite `com.amazonaws.<region>.ec2`.
+    - **Endpoint da Interface para o Amazon S3**:
+        - Siga as mesmas instruções acima, mas em Service Name, digite `com.amazonaws.<region>.s3`.
+        - Desmarque Habilitar nome DNS, pois o DNS privado não é compatível com endpoints da interface do Amazon S3.
+    - **Endpoint do Gateway do Amazon S3**:
+        - Crie um endpoint de gateway Amazon S3 na VPC à qual a sub-rede da área de teste pertence.
+        - Atualize as tabelas de rotas da sub-rede de teste com as rotas relevantes.
+
+3. **Replicação e Migração dos Servidores**:
     - **Replicação Contínua com MGN**:
         - Estabeleça a conexão entre os servidores locais e os servidores de replicação via AWS Direct Connect ou VPN.
         - Os dados são criptografados em trânsito usando criptografia AES de 256 bits.
@@ -58,7 +87,7 @@ Imagine que você está mudando de casa. Em vez de reformar completamente a nova
         - O servidor de replicação realizará chamadas de API para criar snapshots dos volumes EBS de preparação durante a replicação.
         - Certifique-se de que a conectividade com o endpoint da API EC2 na porta 443 esteja ativa.
 
-3. **Testes**:
+4. **Testes**:
     - **Instâncias de Teste**:
         - Inicie instâncias EC2 na sub-rede de área de testes com base no modelo de execução configurado.
         - Essas instâncias se conectarão a cópias atualizadas dos volumes EBS da área de preparação.
@@ -67,6 +96,10 @@ Imagine que você está mudando de casa. Em vez de reformar completamente a nova
         - Utilize o AWS Systems Manager (SSM) para gerenciar as instâncias de teste de forma automatizada, facilitando a configuração e o monitoramento.
 
 ![Migração](./Migracao.png)
+
+Para mais detalhes sobre a conexão com o AWS Application Migration Service, consulte a [documentação oficial](https://docs.aws.amazon.com/pt_br/prescriptive-guidance/latest/patterns/connect-to-application-migration-service-data-and-control-planes-over-a-private-network.html).
+
+Assista ao vídeo explicativo sobre a migração para AWS: [YouTube](https://www.youtube.com/watch?v=ao8geVzmmRo).
 
 ## Modernização: Ferramentas
 
