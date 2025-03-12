@@ -35,28 +35,32 @@ Imagine que você está mudando de casa. Em vez de reformar completamente a nova
 #### Migração "Lift-and-Shift": Passo a Passo
 
 1. **Preparação do Ambiente On-Premise e AWS**:
+    - **Criar Sub-rede da Área de Teste**:
+        - No console da AWS, navegue até o serviço VPC.
+        - Crie uma nova sub-rede dedicada para a área de preparação.
+        - Anote o ID da sub-rede, pois você precisará especificá-lo no modelo de Configurações de Replicação.
     - **Instalação do Agente de Replicação AWS**:
-        - Em cada servidor local (front01, back01, db01), instale o AWS Replication Agent. Este software estabelecerá a conexão segura com o AWS Migration Service (MGN).
-    - **Comunicação Segura com o AWS MGN**:
-        - Certifique-se de que os servidores locais e os servidores de replicação MGN, localizados na sub-rede de área de preparação, possam se comunicar com os endpoints do AWS MGN na porta 443. Essa comunicação é essencial para autenticação, configuração e monitoramento contínuo.
-    - **Acesso ao Armazenamento S3**:
-        - Ao iniciar, os servidores de replicação e conversão acessarão um bucket S3 para baixar o software necessário e os arquivos de configuração.
+        - Em cada servidor local (front01, back01, db01), baixe e instale o AWS Replication Agent.
+        - O instalador do agente deve ter acesso à URL do bucket do Amazon S3 da região da AWS que você está usando.
+    - **Configuração de Rede**:
+        - Certifique-se de que os servidores locais e os servidores de replicação MGN possam se comunicar com os endpoints do AWS MGN na porta 443.
+        - Configure regras de segurança no seu VPC para permitir o tráfego necessário.
 
 2. **Replicação e Migração dos Servidores**:
     - **Replicação Contínua com MGN**:
-        - A conexão entre os servidores locais e os servidores de replicação é estabelecida via AWS Direct Connect ou VPN, garantindo a segurança dos dados.
+        - Estabeleça a conexão entre os servidores locais e os servidores de replicação via AWS Direct Connect ou VPN.
         - Os dados são criptografados em trânsito usando criptografia AES de 256 bits.
         - Volumes Elastic Block Store (EBS) são criados com o mesmo tamanho dos discos originais, mantendo os dados sincronizados na AWS.
     - **Migração do Banco de Dados com DMS**:
-        - Para o banco de dados (MySQL), utilize o AWS Database Migration Service (DMS).
-        - O banco de dados será migrado para o Amazon RDS, aproveitando os benefícios de um serviço gerenciado.
+        - Utilize o AWS Database Migration Service (DMS) para migrar o banco de dados MySQL para o Amazon RDS.
+        - Configure o DMS para replicar os dados do banco de dados de origem para o RDS.
     - **Snapshots e Conectividade com API EC2**:
         - O servidor de replicação realizará chamadas de API para criar snapshots dos volumes EBS de preparação durante a replicação.
         - Certifique-se de que a conectividade com o endpoint da API EC2 na porta 443 esteja ativa.
 
 3. **Testes**:
     - **Instâncias de Teste**:
-        - A sub-rede de área de testes iniciará instâncias EC2 com base no modelo de execução configurado.
+        - Inicie instâncias EC2 na sub-rede de área de testes com base no modelo de execução configurado.
         - Essas instâncias se conectarão a cópias atualizadas dos volumes EBS da área de preparação.
         - Importante: essas cópias não serão mais sincronizadas com os servidores locais.
     - **Gerenciamento com AWS Systems Manager (SSM)**:
