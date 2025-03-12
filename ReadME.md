@@ -101,6 +101,23 @@ Imagine que você está mudando de casa. Em vez de reformar completamente a nova
 
 ![Migração](./migracao.gif)
 
+## Pós migração:
+Após fazer a migração e realizar todos os testes, a estrutura utilizará as seguintes ferramentas:
+| Ícone | Nome | Descrição |
+|---|---|---|
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Networking-Content-Delivery/64/Arch_Amazon-Route-53_64@5x.png" width="50"> | Route 53 | Serviço de DNS (Sistema de Nomes de Domínio). |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Security-Identity-Compliance/64/Arch_AWS-WAF_64.png" width="50"> | WAF (Web Application Firewall) | Firewall de aplicações web. |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Networking-Content-Delivery/64/Arch_Amazon-CloudFront_64.png" width="50"> | CloudFront | Serviço de rede de entrega de conteúdo (CDN). |
+| <img src="https://cloud-icons.onemodel.app/aws/Resource-Icons_01312023/Res_Networking-and-Content-Delivery/Res_48_Light/Res_Elastic-Load-Balancing_Application-Load-Balancer_48_Light.png" width="50"> | Load Balancer | Distribuidor de tráfego. |
+| <img src="https://cloud-icons.onemodel.app/aws/Resource-Icons_01312023/Res_Networking-and-Content-Delivery/Res_48_Light/Res_Amazon-VPC_NAT-Gateway_48_Light.png" width="50"> | NAT (Network Address Translation) | Serviço de tradução de endereços de rede. |
+| <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7L7fI-Ozxh2ni9T2E7rgX_CU-VNMOpoXfwpIxYIaifUcJL_NQ0ZJi8mGHWNRdiFXmres&usqp=CAU" width="50"> | RDS (Relational Database Service) | Serviço de banco de dados relacional gerenciado. |
+
+### Diagrama após a migração
+
+![PósMigração](./PosMigracao.png)
+
+
+
 ## Modernização: Ferramentas
 
 
@@ -137,50 +154,46 @@ Imagine que você está mudando de casa. Em vez de reformar completamente a nova
     - **O que faz**: É um serviço de banco de dados relacional gerenciado que oferece suporte a vários mecanismos de banco de dados, como MySQL, PostgreSQL e Aurora.
     - **Importância**: Fornece um banco de dados gerenciado, eliminando a necessidade de gerenciar a infraestrutura subjacente e garantindo alta disponibilidade e escalabilidade.
 
-4. **Amazon EFS (Elastic File System)**:
-    - **O que faz**: É um serviço de armazenamento de arquivos escalável e elástico para instâncias EC2.
-    - **Importância**: Permite compartilhar arquivos entre várias instâncias EC2, facilitando a criação de aplicações distribuídas.
-
-5. **Amazon S3 (Simple Storage Service)**:
+4. **Amazon S3 (Simple Storage Service)**:
     - **O que faz**: É um serviço de armazenamento de objetos altamente escalável e durável.
     - **Importância**: Permite armazenar e recuperar qualquer tipo de dado, como arquivos estáticos, backups e logs.
 
-6. **CloudWatch**:
+5. **CloudWatch**:
     - **O que faz**: É um serviço de monitoramento e observabilidade que coleta métricas, logs e eventos de recursos AWS e aplicações.
     - **Importância**: Permite monitorar a saúde e o desempenho da aplicação, identificar problemas e tomar decisões informadas.
 
-7. **Route 53**:
+6. **Route 53**:
     - **O que faz**: É um serviço de DNS (Sistema de Nomes de Domínio) altamente disponível e escalável.
     - **Importância**: Permite gerenciar nomes de domínio e rotear o tráfego para a aplicação na AWS.
 
-8. **WAF (Web Application Firewall)**:
+7. **WAF (Web Application Firewall)**:
     - **O que faz**: É um firewall de aplicações web que protege a aplicação contra ataques comuns, como injeção de SQL e cross-site scripting.
     - **Importância**: Garante a segurança da aplicação, protegendo-a contra ameaças e vulnerabilidades.
 
-9. **CloudFront**:
+8. **CloudFront**:
     - **O que faz**: É um serviço de rede de entrega de conteúdo (CDN) que acelera a entrega de conteúdo para usuários em todo o mundo.
     - **Importância**: Melhora o desempenho da aplicação, reduzindo a latência e o tempo de carregamento para usuários geograficamente dispersos.
 
-10. **Internet Gateway**:
+9. **Internet Gateway**:
     - **O que faz**: É um componente de rede que permite a comunicação entre a VPC e a Internet.
     - **Importância**: Permite que a aplicação acesse a Internet e que os usuários acessem a aplicação a partir da Internet.
 
-11. **IAM (Identity and Access Management)**:
+10. **IAM (Identity and Access Management)**:
     - **O que faz**: É um serviço de gerenciamento de identidade e acesso que permite controlar o acesso a recursos AWS.
     - **Importância**: Garante a segurança da aplicação, concedendo acesso apenas a usuários e serviços autorizados.
 
-12. **Secrets Manager**:
+11. **Secrets Manager**:
     - **O que faz**: É um serviço que permite gerenciar segredos, como senhas, chaves de API e certificados.
     - **Importância**: Melhora a segurança da aplicação, evitando que segredos sejam armazenados em código ou em arquivos de configuração.
 
-13. **Load Balancer**:
+12. **Load Balancer**:
     - **O que faz**: Distribui o tráfego de entrada entre várias instâncias EC2 ou contêineres.
     - **Importância**: Melhora a disponibilidade e a escalabilidade da aplicação, distribuindo a carga de trabalho de forma uniforme.
 
-14. **NAT (Network Address Translation)**:
+13. **NAT (Network Address Translation)**:
     - **O que faz**: Permite que instâncias em sub-redes privadas acessem a Internet sem serem acessíveis a partir da Internet.
     - **Importância**: Melhora a segurança da aplicação, ocultando as instâncias privadas da Internet.
 
-15. **Backup**:
+14. **Backup**:
     - **O que faz**: É um serviço que permite fazer backup e restaurar dados de recursos AWS.
     - **Importância**: Garante a segurança dos dados, permitindo a recuperação em caso de falha ou desastre.
