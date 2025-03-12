@@ -95,7 +95,7 @@ Imagine que você está mudando de casa. Em vez de reformar completamente a nova
     - **Gerenciamento com AWS Systems Manager (SSM)**:
         - Utilize o AWS Systems Manager (SSM) para gerenciar as instâncias de teste de forma automatizada, facilitando a configuração e o monitoramento.
 
-![Migração](./Migracao.png)
+![Migração](./migracao.gif)
 
 Para mais detalhes sobre a conexão com o AWS Application Migration Service, consulte a [documentação oficial](https://docs.aws.amazon.com/pt_br/prescriptive-guidance/latest/patterns/connect-to-application-migration-service-data-and-control-planes-over-a-private-network.html).
 
