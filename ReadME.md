@@ -97,10 +97,6 @@ Imagine que você está mudando de casa. Em vez de reformar completamente a nova
 
 ![Migração](./migracao.gif)
 
-Para mais detalhes sobre a conexão com o AWS Application Migration Service, consulte a [documentação oficial](https://docs.aws.amazon.com/pt_br/prescriptive-guidance/latest/patterns/connect-to-application-migration-service-data-and-control-planes-over-a-private-network.html).
-
-Assista ao vídeo explicativo sobre a migração para AWS: [YouTube](https://www.youtube.com/watch?v=ao8geVzmmRo).
-
 ## Modernização: Ferramentas
 
 - **AWS CodeCommit**: Repositório de código fonte.
