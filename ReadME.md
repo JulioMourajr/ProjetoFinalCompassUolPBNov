@@ -24,11 +24,15 @@ Imagine que você está mudando de casa. Em vez de reformar completamente a nova
 
 ### O que será utilizado?
 
-- AWS MGN (Application Migration Service)
-- AWS Replication Agent
-- AWS EBS (Elastic Block Store)
-- AWS DMS (Database Migration Service)
-- Load Balancer
+
+| Ícone | Nome | Descrição |
+|------------|------------------------------|------------------------------|
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Migration-Transfer/64/Arch_AWS-Application-Migration-Service_64@5x.png" width="50"> | **AWS Application Migration Service** | Migração de aplicações on-premises para a AWS |
+| <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRULf2JOHbvkPux8pEzQrkH70TVSpfgRMzgQA&s" width="50"> | **Amazon EC2** | Instâncias de servidores virtuais na AWS |
+| <img src="https://cdn.worldvectorlogo.com/logos/amazon-s3-simple-storage-service.svg" width="50"> | **Amazon S3** | Armazenamento escalável de objetos na nuvem |
+| <img src="https://cdn.worldvectorlogo.com/logos/amazon-elastic-block-store-1.svg" width="50"> | **Amazon Elastic Block Store** | Armazenamento em bloco para uso com EC2 |
+| <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7L7fI-Ozxh2ni9T2E7rgX_CU-VNMOpoXfwpIxYIaifUcJL_NQ0ZJi8mGHWNRdiFXmres&usqp=CAU" width="50"> | **Amazon RDS** | Banco de dados relacional gerenciado |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Database/64/Arch_AWS-Database-Migration-Service_64@5x.png" width="50"> | **AWS Database Migration Service** | Migração de bancos de dados para a AWS |
 
 ### Pré-requisitos
 
@@ -99,101 +103,84 @@ Imagine que você está mudando de casa. Em vez de reformar completamente a nova
 
 ## Modernização: Ferramentas
 
-- **AWS CodeCommit**: Repositório de código fonte.
-- **AWS CodePipeline**: Serviço de entrega contínua para automação de pipelines de lançamento.
-- **AWS CodeBuild**: Serviço de construção de código para compilar e testar aplicações.
-- **AWS CodeDeploy**: Serviço de implantação de código para automatizar a implantação de aplicações.
-- **Amazon ECR (Elastic Container Registry)**: Registro de imagens Docker.
-- **Amazon EKS (Elastic Kubernetes Service)**: Serviço gerenciado de Kubernetes.
-- **Amazon RDS (Relational Database Service)**: Serviço de banco de dados relacional gerenciado.
-- **Amazon S3 (Simple Storage Service)**: Serviço de armazenamento de objetos.
-- **CloudWatch**: Serviço de monitoramento e observabilidade.
-- **Route 53**: Serviço de DNS (Sistema de Nomes de Domínio).
-- **WAF (Web Application Firewall)**: Firewall de aplicações web.
-- **CloudFront**: Serviço de rede de entrega de conteúdo (CDN).
-- **Internet Gateway**: Componente de rede para comunicação com a Internet.
-- **IAM (Identity and Access Management)**: Serviço de gerenciamento de identidade e acesso.
-- **Secrets Manager**: Serviço para gerenciamento de segredos.
-- **Load Balancer**: Distribuidor de tráfego.
-- **NAT (Network Address Translation)**: Serviço de tradução de endereços de rede.
-- **Backup**: Serviço de backup.
+
+| Ícone | Nome | Descrição |
+|---|---|---|
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Containers/64/Arch_Amazon-Elastic-Container-Registry_64.png" width="50"> | Amazon ECR (Elastic Container Registry) | Registro de imagens Docker. |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Containers/64/Arch_Amazon-Elastic-Kubernetes-Service_64.png" width="50"> | Amazon EKS (Elastic Kubernetes Service) | Serviço gerenciado de Kubernetes. |
+| <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7L7fI-Ozxh2ni9T2E7rgX_CU-VNMOpoXfwpIxYIaifUcJL_NQ0ZJi8mGHWNRdiFXmres&usqp=CAU" width="50"> | Amazon RDS (Relational Database Service) | Serviço de banco de dados relacional gerenciado. |
+| <img src="https://cdn.worldvectorlogo.com/logos/amazon-s3-simple-storage-service.svg" width="50"> | Amazon S3 (Simple Storage Service) | Serviço de armazenamento de objetos. |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Management-Governance/64/Arch_Amazon-CloudWatch_64.png" width="50"> | CloudWatch | Serviço de monitoramento e observabilidade. |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Networking-Content-Delivery/64/Arch_Amazon-Route-53_64@5x.png" width="50"> | Route 53 | Serviço de DNS (Sistema de Nomes de Domínio). |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Security-Identity-Compliance/64/Arch_AWS-WAF_64.png" width="50"> | WAF (Web Application Firewall) | Firewall de aplicações web. |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Networking-Content-Delivery/64/Arch_Amazon-CloudFront_64.png" width="50"> | CloudFront | Serviço de rede de entrega de conteúdo (CDN). |
+| <img src="https://cloud-icons.onemodel.app/aws/Resource-Icons_01312023/Res_Networking-and-Content-Delivery/Res_48_Light/Res_Amazon-VPC_Internet-Gateway_48_Light.png" width="50"> | Internet Gateway | Componente de rede para comunicação com a Internet. |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64.png" width="50"> | IAM (Identity and Access Management) | Serviço de gerenciamento de identidade e acesso. |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Security-Identity-Compliance/64/Arch_AWS-Secrets-Manager_64@5x.png" width="50"> | Secrets Manager | Serviço para gerenciamento de segredos. |
+| <img src="https://cloud-icons.onemodel.app/aws/Resource-Icons_01312023/Res_Networking-and-Content-Delivery/Res_48_Light/Res_Elastic-Load-Balancing_Application-Load-Balancer_48_Light.png" width="50"> | Load Balancer | Distribuidor de tráfego. |
+| <img src="https://cloud-icons.onemodel.app/aws/Resource-Icons_01312023/Res_Networking-and-Content-Delivery/Res_48_Light/Res_Amazon-VPC_NAT-Gateway_48_Light.png" width="50"> | NAT (Network Address Translation) | Serviço de tradução de endereços de rede. |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Storage/64/Arch_AWS-Backup_64@5x.png" width="50"> | Backup | Serviço de backup. |
 
 ![Modernização](./Eks.png)
 
 ## Modernização: Explicação das Ferramentas
 
-1. **AWS CodeCommit**:
-    - **O que faz**: É um serviço de controle de versão totalmente gerenciado que hospeda repositórios Git privados.
-    - **Importância**: Permite armazenar e versionar o código fonte da aplicação, facilitando a colaboração entre desenvolvedores e o controle de alterações.
-
-2. **AWS CodePipeline**:
-    - **O que faz**: É um serviço de entrega contínua que automatiza o processo de lançamento de software.
-    - **Importância**: Cria pipelines de CI/CD (Integração Contínua/Entrega Contínua) que automatizam a construção, teste e implantação da aplicação, acelerando o ciclo de desenvolvimento e reduzindo erros.
-
-3. **AWS CodeBuild**:
-    - **O que faz**: É um serviço de construção de código que compila o código fonte, executa testes e produz pacotes de software prontos para implantação.
-    - **Importância**: Automatiza a fase de construção do pipeline de CI/CD, garantindo que o código seja compilado e testado de forma consistente.
-
-4. **AWS CodeDeploy**:
-    - **O que faz**: É um serviço de implantação de código que automatiza a implantação de aplicações em instâncias EC2, funções Lambda ou contêineres ECS.
-    - **Importância**: Automatiza a fase de implantação do pipeline de CI/CD, garantindo que a aplicação seja implantada de forma segura e consistente em diferentes ambientes.
-
-5. **Amazon ECR (Elastic Container Registry)**:
+1. **Amazon ECR (Elastic Container Registry)**:
     - **O que faz**: É um serviço de registro de contêineres Docker totalmente gerenciado.
     - **Importância**: Permite armazenar e gerenciar imagens Docker, que são usadas para empacotar e distribuir a aplicação em contêineres.
 
-6. **Amazon EKS (Elastic Kubernetes Service)**:
+2. **Amazon EKS (Elastic Kubernetes Service)**:
     - **O que faz**: É um serviço gerenciado de Kubernetes que facilita a implantação, o gerenciamento e o escalonamento de aplicações em contêineres.
     - **Importância**: Permite orquestrar contêineres de forma eficiente, garantindo alta disponibilidade, escalabilidade e resiliência da aplicação.
 
-7. **Amazon RDS (Relational Database Service)**:
+3. **Amazon RDS (Relational Database Service)**:
     - **O que faz**: É um serviço de banco de dados relacional gerenciado que oferece suporte a vários mecanismos de banco de dados, como MySQL, PostgreSQL e Aurora.
     - **Importância**: Fornece um banco de dados gerenciado, eliminando a necessidade de gerenciar a infraestrutura subjacente e garantindo alta disponibilidade e escalabilidade.
 
-8. **Amazon EFS (Elastic File System)**:
+4. **Amazon EFS (Elastic File System)**:
     - **O que faz**: É um serviço de armazenamento de arquivos escalável e elástico para instâncias EC2.
     - **Importância**: Permite compartilhar arquivos entre várias instâncias EC2, facilitando a criação de aplicações distribuídas.
 
-9. **Amazon S3 (Simple Storage Service)**:
+5. **Amazon S3 (Simple Storage Service)**:
     - **O que faz**: É um serviço de armazenamento de objetos altamente escalável e durável.
     - **Importância**: Permite armazenar e recuperar qualquer tipo de dado, como arquivos estáticos, backups e logs.
 
-10. **CloudWatch**:
+6. **CloudWatch**:
     - **O que faz**: É um serviço de monitoramento e observabilidade que coleta métricas, logs e eventos de recursos AWS e aplicações.
     - **Importância**: Permite monitorar a saúde e o desempenho da aplicação, identificar problemas e tomar decisões informadas.
 
-11. **Route 53**:
+7. **Route 53**:
     - **O que faz**: É um serviço de DNS (Sistema de Nomes de Domínio) altamente disponível e escalável.
     - **Importância**: Permite gerenciar nomes de domínio e rotear o tráfego para a aplicação na AWS.
 
-12. **WAF (Web Application Firewall)**:
+8. **WAF (Web Application Firewall)**:
     - **O que faz**: É um firewall de aplicações web que protege a aplicação contra ataques comuns, como injeção de SQL e cross-site scripting.
     - **Importância**: Garante a segurança da aplicação, protegendo-a contra ameaças e vulnerabilidades.
 
-13. **CloudFront**:
+9. **CloudFront**:
     - **O que faz**: É um serviço de rede de entrega de conteúdo (CDN) que acelera a entrega de conteúdo para usuários em todo o mundo.
     - **Importância**: Melhora o desempenho da aplicação, reduzindo a latência e o tempo de carregamento para usuários geograficamente dispersos.
 
-14. **Internet Gateway**:
+10. **Internet Gateway**:
     - **O que faz**: É um componente de rede que permite a comunicação entre a VPC e a Internet.
     - **Importância**: Permite que a aplicação acesse a Internet e que os usuários acessem a aplicação a partir da Internet.
 
-15. **IAM (Identity and Access Management)**:
+11. **IAM (Identity and Access Management)**:
     - **O que faz**: É um serviço de gerenciamento de identidade e acesso que permite controlar o acesso a recursos AWS.
     - **Importância**: Garante a segurança da aplicação, concedendo acesso apenas a usuários e serviços autorizados.
 
-16. **Secrets Manager**:
+12. **Secrets Manager**:
     - **O que faz**: É um serviço que permite gerenciar segredos, como senhas, chaves de API e certificados.
     - **Importância**: Melhora a segurança da aplicação, evitando que segredos sejam armazenados em código ou em arquivos de configuração.
 
-17. **Load Balancer**:
+13. **Load Balancer**:
     - **O que faz**: Distribui o tráfego de entrada entre várias instâncias EC2 ou contêineres.
     - **Importância**: Melhora a disponibilidade e a escalabilidade da aplicação, distribuindo a carga de trabalho de forma uniforme.
 
-18. **NAT (Network Address Translation)**:
+14. **NAT (Network Address Translation)**:
     - **O que faz**: Permite que instâncias em sub-redes privadas acessem a Internet sem serem acessíveis a partir da Internet.
     - **Importância**: Melhora a segurança da aplicação, ocultando as instâncias privadas da Internet.
 
-19. **Backup**:
+15. **Backup**:
     - **O que faz**: É um serviço que permite fazer backup e restaurar dados de recursos AWS.
     - **Importância**: Garante a segurança dos dados, permitindo a recuperação em caso de falha ou desastre.
