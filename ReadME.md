@@ -114,7 +114,7 @@ Após fazer a migração e realizar todos os testes, a estrutura utilizará as s
 
 ### Diagrama após a migração
 
-![PósMigração](./PosMigracao.png)
+![PósMigração](./Posmigracao.png)
 
 ## Modernização: Ferramentas
 
