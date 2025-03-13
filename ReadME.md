@@ -114,11 +114,17 @@ Após fazer a migração e realizar todos os testes, a estrutura utilizará as s
 
 ### Diagrama após a migração
 
-![PósMigração](./PosMigracao.png)
+![PósMigração](./Posmigracao.png)
 
+## **Etapa 2: Modernização/Kubernetes**
 
+### **Atividades Necessárias para a Migração**
+- Reestruturação para um ambiente **Kubernetes na AWS (EKS)**.
+- Armazenamento de monitoramento com **AWS CloudWatch e Prometheus**.
+- Segurança aprimorada com **AWS WAF e Secrets Manager**.
 
-## Modernização: Ferramentas
+  
+### Modernização: Ferramentas
 
 
 | Ícone | Nome | Descrição |
