@@ -101,7 +101,16 @@ Imagine que você está mudando de casa. Em vez de reformar completamente a nova
 
 ![Migração](./migracao.gif)
 
+## Estimativa dos Valores da Migração
+
+[Link para estimativa de Custos da Migração](https://calculator.aws/#/estimate?id=98c123ba0dd4c1b98e488fcb8f3600ee4882f41d)
+
+(934,08 / 30) * 3  = 93,40 USD
+
+![Custo Migração](./estimativaMigracao.png)
+
 ## Pós migração:
+
 Após fazer a migração e realizar todos os testes, a estrutura utilizará as seguintes ferramentas:
 | Ícone | Nome | Descrição |
 |---|---|---|
