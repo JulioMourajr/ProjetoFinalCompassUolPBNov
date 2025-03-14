@@ -101,7 +101,17 @@ Imagine que você está mudando de casa. Em vez de reformar completamente a nova
 
 ![Migração](./migracao.gif)
 
-## Estimativa dos Valores da Migração
+## Estimativa dos custos da Migração:
+
+| Ícone | Nome | Custo (USD) | Custo 3 dias (USD) |
+|------------|------------------------------|-------------|-------------------|
+| <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRULf2JOHbvkPux8pEzQrkH70TVSpfgRMzgQA&s" width="50"> | **Amazon EC2** | 6,13 | 0,61 |
+| <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRULf2JOHbvkPux8pEzQrkH70TVSpfgRMzgQA&s" width="50"> | **Amazon EC2** | 10,99 | 1,10 |
+| <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7L7fI-Ozxh2ni9T2E7rgX_CU-VNMOpoXfwpIxYIaifUcJL_NQ0ZJi8mGHWNRdiFXmres&usqp=CAU" width="50"> | **Amazon RDS for MySQL** | 396,95 | 39,70 |
+| <img src="https://cdn.worldvectorlogo.com/logos/amazon-s3-simple-storage-service.svg" width="50"> | **Amazon S3** | 1,15 | 0,12 |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Database/64/Arch_AWS-Database-Migration-Service_64@5x.png" width="50"> | **AWS Database Migration Service** | 507,91 | 50,79 |
+| <img src="https://cdn.iconscout.com/icon/free/png-256/aws-vpc-3628711-3030226.png" width="50"> | **Amazon VPC** | 10,95 | 1,10 |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Migration-Transfer/64/Arch_AWS-Application-Migration-Service_64@5x.png" width="50"> | **AWS Application Migration Service** | 0,00 | 0,00 |
 
 [Link para estimativa de Custos da Migração](https://calculator.aws/#/estimate?id=98c123ba0dd4c1b98e488fcb8f3600ee4882f41d)
 
