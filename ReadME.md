@@ -214,14 +214,14 @@ Após fazer a migração e realizar todos os testes, a estrutura utilizará as s
     - **O que faz**: Distribui o tráfego de entrada entre várias instâncias EC2 ou contêineres.
     - **Importância**: Melhora a disponibilidade e a escalabilidade da aplicação, distribuindo a carga de trabalho de forma uniforme.
       
-17. **Bastion Host**:
+13. **Bastion Host**:
     - **O que faz**: São **servidores intermediários** para SSH dentro da VPC, evitando exposição direta das instâncias privadas à internet.  
     - **Importância**: Os administradores se conectam ao Bastion Host para acessar os nós do **EKS**.  
 
-13. **NAT (Network Address Translation)**:
+14. **NAT (Network Address Translation)**:
     - **O que faz**: Permite que instâncias em sub-redes privadas acessem a Internet sem serem acessíveis a partir da Internet.
     - **Importância**: Melhora a segurança da aplicação, ocultando as instâncias privadas da Internet.
 
-14. **Backup**:
+15. **Backup**:
     - **O que faz**: É um serviço que permite fazer backup e restaurar dados de recursos AWS.
     - **Importância**: Garante a segurança dos dados, permitindo a recuperação em caso de falha ou desastre.
