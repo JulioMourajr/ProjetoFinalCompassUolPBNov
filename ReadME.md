@@ -110,7 +110,7 @@ Imagine que você está mudando de casa. Em vez de reformar completamente a nova
 | <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7L7fI-Ozxh2ni9T2E7rgX_CU-VNMOpoXfwpIxYIaifUcJL_NQ0ZJi8mGHWNRdiFXmres&usqp=CAU" width="50"> | **Amazon RDS for MySQL** | 396,95 | 39,70 |
 | <img src="https://cdn.worldvectorlogo.com/logos/amazon-s3-simple-storage-service.svg" width="50"> | **Amazon S3** | 1,15 | 0,12 |
 | <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Database/64/Arch_AWS-Database-Migration-Service_64@5x.png" width="50"> | **AWS Database Migration Service** | 507,91 | 50,79 |
-| <img src="https://cdn.iconscout.com/icon/free/png-256/aws-vpc-3628711-3030226.png" width="50"> | **Amazon VPC** | 10,95 | 1,10 |
+| <img src="https://github.com/user-attachments/assets/74224709-c040-46dd-858c-6307886fb90d" width="50"> | **Amazon VPC** | 10,95 | 1,10 |
 | <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Migration-Transfer/64/Arch_AWS-Application-Migration-Service_64@5x.png" width="50"> | **AWS Application Migration Service** | 0,00 | 0,00 |
 
 [Link para estimativa de Custos da Migração](https://calculator.aws/#/estimate?id=98c123ba0dd4c1b98e488fcb8f3600ee4882f41d)
@@ -141,11 +141,24 @@ Após fazer a migração e realizar todos os testes, a estrutura utilizará as s
 
 ![estimativaPosMigracao](./estimativaPosMigracao.png)
 
+| Ícone | Nome | Custo (USD) |
+|------------|------------------------------|-------------|
+| <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRULf2JOHbvkPux8pEzQrkH70TVSpfgRMzgQA&s" width="50"> | **Amazon EC2 (Front-End)** | 12,26 |
+| <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRULf2JOHbvkPux8pEzQrkH70TVSpfgRMzgQA&s" width="50"> | **Amazon EC2 (Back-End)** | 24,38 |
+| <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7L7fI-Ozxh2ni9T2E7rgX_CU-VNMOpoXfwpIxYIaifUcJL_NQ0ZJi8mGHWNRdiFXmres&usqp=CAU" width="50"> | **Amazon RDS for MySQL** | 706,30 |
+| <img src="https://cloud-icons.onemodel.app/aws/Resource-Icons_01312023/Res_Networking-and-Content-Delivery/Res_48_Light/Res_Elastic-Load-Balancing_Application-Load-Balancer_48_Light.png" width="50"> | **Load Balancer** | 33,32 | 
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Security-Identity-Compliance/64/Arch_AWS-WAF_64@5x.png" width="50"> | **AWS Web Application Firewall (WAF)** | 0,00 |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Networking-Content-Delivery/64/Arch_Amazon-CloudFront_64@5x.png" width="50"> | **Amazon CloudFront** | 0,00 |
+| <img src="https://github.com/user-attachments/assets/74224709-c040-46dd-858c-6307886fb90d" width="50"> | **Amazon Virtual Private Cloud (VPC)** | 74,70 |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Networking-Content-Delivery/64/Arch_Amazon-Route-53_64@5x.png" width="50"> | **Amazon Route 53** | 15,50 |
+
+
+
 ## Etapa 2: Modernização Kubernetes
 
 ### Atividades Necessárias para a Migração
 
-- Reestruturação para um ambiente Kubernetes na AWS (EKS).
+- Reestruturação para um ambiente Kubernetes na AWS (EKS).Load Balancing 	33
 - Armazenamento de monitoramento com AWS CloudWatch e Prometheus.
 - Segurança aprimorada com AWS WAF e Secrets Manager.
 
