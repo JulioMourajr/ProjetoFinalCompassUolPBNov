@@ -15,6 +15,8 @@
     - [Ferramentas](#ferramentas)
 7. [Separação de Ambientes](#separação-de-ambientes)
 8. [Modernização: Explicação das Ferramentas](#modernização-explicação-das-ferramentas)
+9. [Conlusão](#conclusão)
+
 
 ## Visão Geral
 
@@ -112,8 +114,6 @@ Imagine que você está mudando de casa. Em vez de reformar completamente a nova
         - Inicie instâncias EC2 na sub-rede de área de testes com base no modelo de execução configurado.
         - Essas instâncias se conectarão a cópias atualizadas dos volumes EBS da área de preparação.
         - Importante: essas cópias não serão mais sincronizadas com os servidores locais.
-    - **Gerenciamento com AWS Systems Manager (SSM)**:
-        - Utilize o AWS Systems Manager (SSM) para gerenciar as instâncias de teste de forma automatizada, facilitando a configuração e o monitoramento.
 
 ![Migração](./img/diagramas/migracao.gif)
 
@@ -146,6 +146,7 @@ Após fazer a migração e realizar todos os testes, a estrutura utilizará as s
 | <img src="https://cloud-icons.onemodel.app/aws/Resource-Icons_01312023/Res_Networking-and-Content-Delivery/Res_48_Light/Res_Elastic-Load-Balancing_Application-Load-Balancer_48_Light.png" width="50"> | Load Balancer | Distribuidor de tráfego. |
 | <img src="https://cloud-icons.onemodel.app/aws/Resource-Icons_01312023/Res_Networking-and-Content-Delivery/Res_48_Light/Res_Amazon-VPC_NAT-Gateway_48_Light.png" width="50"> | NAT (Network Address Translation) | Serviço de tradução de endereços de rede. |
 | <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7L7fI-Ozxh2ni9T2E7rgX_CU-VNMOpoXfwpIxYIaifUcJL_NQ0ZJi8mGHWNRdiFXmres&usqp=CAU" width="50"> | RDS (Relational Database Service) | Serviço de banco de dados relacional gerenciado. |
+| <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRULf2JOHbvkPux8pEzQrkH70TVSpfgRMzgQA&s" width="50"> | Amazon EC2 | Instâncias de servidores virtuais na AWS |
 
 ### Diagrama após a migração
 
@@ -157,7 +158,7 @@ Após fazer a migração e realizar todos os testes, a estrutura utilizará as s
 
 ![estimativaPosMigracao](./img/estimativa/estimativaPosMigracao.png)
 
-| Ícone | Nome | Custo (USD) |
+| Ícone | Nome | Custo Mensal (USD) |
 |------------|------------------------------|-------------|
 | <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRULf2JOHbvkPux8pEzQrkH70TVSpfgRMzgQA&s" width="50"> | **Amazon EC2 (Front-End)** | 12,26 |
 | <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRULf2JOHbvkPux8pEzQrkH70TVSpfgRMzgQA&s" width="50"> | **Amazon EC2 (Back-End)** | 24,38 |
@@ -174,7 +175,7 @@ Após fazer a migração e realizar todos os testes, a estrutura utilizará as s
 
 ### Atividades Necessárias para a Migração
 
-- Reestruturação para um ambiente Kubernetes na AWS (EKS).Load Balancing 	33
+- Reestruturação para um ambiente Kubernetes na AWS (EKS).
 - Armazenamento de monitoramento com AWS CloudWatch e Prometheus.
 - Segurança aprimorada com AWS WAF e Secrets Manager.
 
@@ -292,3 +293,35 @@ Decidimos criar três ambientes de infraestrutura: Desenvolvimento, Homologaçã
 15. **Backup**:
     - **O que faz**: É um serviço que permite fazer backup e restaurar dados de recursos AWS.
     - **Importância**: Garante a segurança dos dados, permitindo a recuperação em caso de falha ou desastre.
+      
+16. **GitLab**:
+    - **O que faz**: É uma plataforma de DevOps que fornece repositórios Git, CI/CD, gerenciamento de projetos, entre outros.
+    - **Importância**: Facilita a colaboração entre desenvolvedores, automatiza pipelines de CI/CD e gerencia o ciclo de vida do desenvolvimento de software.
+
+17. **Terraform**:
+    - **O que faz**: É uma ferramenta de infraestrutura como código (IaC) que permite definir e provisionar infraestrutura através de arquivos de configuração.
+    - **Importância**: Automatiza a criação e o gerenciamento de infraestrutura, garantindo consistência e facilitando a replicação de ambientes.
+
+
+## Conclusão
+
+A migração e modernização da infraestrutura da Fast Engineering S/A para a AWS representa um marco significativo na trajetória de crescimento e inovação da empresa. Este projeto foi cuidadosamente planejado e executado em duas etapas principais: a migração "Lift-and-Shift" e a modernização com Kubernetes, cada uma com objetivos claros e benefícios distintos.
+
+### Migração "Lift-and-Shift"
+
+A primeira etapa, a migração "Lift-and-Shift", permite que a Fast Engineering S/A mova suas aplicações e dados para a nuvem. Esta abordagem garante uma transição rápida e eficiente, replicando a infraestrutura existente na AWS. Utilizando serviços como o AWS Application Migration Service, Amazon EC2, Amazon S3, e Amazon RDS, a empresa conseguiu manter a continuidade dos negócios enquanto se beneficiava das vantagens da nuvem, como escalabilidade, alta disponibilidade e segurança aprimorada.
+
+
+### Modernização com Kubernetes
+
+A segunda etapa, a modernização com Kubernetes, foi projetada para transformar a infraestrutura da Fast Engineering S/A em uma plataforma moderna e altamente eficiente. Ao adotar o Amazon EKS (Elastic Kubernetes Service) e outras ferramentas de contêinerização, a empresa conseguiu orquestrar suas aplicações de forma mais eficiente, garantindo alta disponibilidade, escalabilidade e resiliência.
+
+A reestruturação para um ambiente Kubernetes na AWS envolve a implementação de práticas de DevOps, como a automação de pipelines de CI/CD com GitLab e a definição de infraestrutura como código (IaC) com Terraform. Essas práticas não apenas melhoraram a eficiência operacional, mas também garantiram a consistência e a repetibilidade dos ambientes de desenvolvimento, homologação e produção.
+
+### Benefícios e Futuro
+
+Com a nova infraestrutura baseada em serviços gerenciados da AWS, a Fast Engineering S/A estará melhor equipada para lidar com picos de demanda, melhorar a experiência do usuário e reduzir custos operacionais.
+
+Além disso, a separação de ambientes em desenvolvimento, homologação e produção, com políticas de segurança e testes rigorosos, assegura que a empresa possa continuar inovando e lançando novas funcionalidades com confiança.
+
+Este projeto de migração e modernização não apenas resolve os desafios atuais de escalabilidade e desempenho, mas também posiciona a Fast Engineering S/A para um futuro de inovação contínua e crescimento sustentável. A empresa está agora preparada para enfrentar os desafios do mercado e aproveitar as oportunidades de crescimento, com uma infraestrutura robusta, segura e escalável.
