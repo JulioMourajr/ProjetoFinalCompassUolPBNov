@@ -135,6 +135,12 @@ Após fazer a migração e realizar todos os testes, a estrutura utilizará as s
 
 ![PósMigração](./Posmigracao.png)
 
+### Valores da Infra da Pos Migração
+
+[Link para estimativa de Custos da Pós Migração](https://calculator.aws/#/estimate?id=e55363d2fe38987bf0ba08693e51455473e227d7)
+
+![estimativaPosMigracao](./estimativaPosMigracao.png)
+
 ## Etapa 2: Modernização Kubernetes
 
 ### Atividades Necessárias para a Migração
@@ -173,6 +179,7 @@ Decidimos criar três ambientes de infraestrutura: Desenvolvimento, Homologaçã
   - Testes automatizados são executados para garantir a qualidade do código.
 
 ![AmbienteDeDev](./EKSDev.drawio.png)
+![estimativaEKSDev](./estimativaDevEKS.png)
 
 - **Ambiente de Homologação**:
   - Utiliza a branch `homolog` no GitLab.
@@ -191,8 +198,7 @@ Decidimos criar três ambientes de infraestrutura: Desenvolvimento, Homologaçã
   - Monitoramento contínuo e testes de desempenho são realizados para garantir a estabilidade.
 
 ![AmbienteDeProd](./EKSProd.drawio.png)
-
-![Modernização](./EKSProd.drawio.png)
+![estimativaEKSProd](./estimativaProdEKS.png)
 
 ## Modernização: Explicação das Ferramentas
 
