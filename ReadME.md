@@ -137,7 +137,7 @@ Imagine que você está mudando de casa. Em vez de reformar completamente a nova
 
 ## Pós migração:
 
-Após fazer a migração e realizar todos os testes, a estrutura utilizará as seguintes ferramentas:
+Após fazer a migração e realizar todos os testes, a estrutura utilizará as seguintes ferramentas da AWS:
 | Ícone | Nome | Descrição |
 |---|---|---|
 | <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Networking-Content-Delivery/64/Arch_Amazon-Route-53_64@5x.png" width="50"> | Route 53 | Serviço de DNS (Sistema de Nomes de Domínio). |
@@ -179,7 +179,7 @@ Após fazer a migração e realizar todos os testes, a estrutura utilizará as s
 - Armazenamento de monitoramento com AWS CloudWatch e Prometheus.
 - Segurança aprimorada com AWS WAF e Secrets Manager.
 
-### Ferramentas:
+### Ferramentas da AWS:
 
 | Ícone | Nome | Descrição |
 |---|---|---|
