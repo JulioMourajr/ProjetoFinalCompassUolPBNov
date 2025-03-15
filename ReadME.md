@@ -1,5 +1,21 @@
 # Documentação do Projeto de Migração e Modernização da Fast Engineering S/A
 
+## Índice
+1. [Visão Geral](#visão-geral)
+2. [Infraestrutura Atual](#infraestrutura-atual)
+3. [Etapa 1: Migração "Lift-and-Shift" (As-Is)](#etapa-1-migração-lift-and-shift-as-is)
+    - [O que é "Lift-and-Shift"?](#o-que-é-lift-and-shift)
+    - [O que será utilizado?](#o-que-será-utilizado)
+    - [Pré-requisitos](#pré-requisitos)
+    - [Atividades Necessárias](#atividades-necessárias)
+4. [Estimativa dos custos da Migração](#estimativa-dos-custos-da-migração)
+5. [Pós migração](#pós-migração)
+6. [Etapa 2: Modernização Kubernetes](#etapa-2-modernização-kubernetes)
+    - [Atividades Necessárias para a Migração](#atividades-necessárias-para-a-migração)
+    - [Ferramentas](#ferramentas)
+7. [Separação de Ambientes](#separação-de-ambientes)
+8. [Modernização: Explicação das Ferramentas](#modernização-explicação-das-ferramentas)
+
 ## Visão Geral
 
 A empresa Fast Engineering S/A está passando por um crescimento acelerado em seu eCommerce, resultando em um aumento significativo no volume de acessos e transações. A infraestrutura atual não consegue mais atender essa demanda de forma eficiente, impactando a escalabilidade e o desempenho da plataforma. Para solucionar esse desafio, será implementada uma nova arquitetura baseada em AWS, garantindo alta disponibilidade, segurança e performance. O processo será conduzido em duas etapas: primeiro, uma migração Lift-and-Shift para a nuvem, seguida por uma modernização completa utilizando Kubernetes e serviços gerenciados.
@@ -99,7 +115,7 @@ Imagine que você está mudando de casa. Em vez de reformar completamente a nova
     - **Gerenciamento com AWS Systems Manager (SSM)**:
         - Utilize o AWS Systems Manager (SSM) para gerenciar as instâncias de teste de forma automatizada, facilitando a configuração e o monitoramento.
 
-![Migração](./migracao.gif)
+![Migração](./img/diagramas/migracao.gif)
 
 ## Estimativa dos custos da Migração:
 
@@ -117,7 +133,7 @@ Imagine que você está mudando de casa. Em vez de reformar completamente a nova
 
 (934,08 / 30) * 3  = 93,40 USD
 
-![Custo Migração](./estimativaMigracao.png)
+![Custo Migração](./img/estimativa/estimativaMigracao.png)
 
 ## Pós migração:
 
@@ -133,13 +149,13 @@ Após fazer a migração e realizar todos os testes, a estrutura utilizará as s
 
 ### Diagrama após a migração
 
-![PósMigração](./Posmigracao.png)
+![PósMigração](./img/diagramas/Posmigracao.png)
 
 ### Valores da Infra da Pos Migração
 
 [Link para estimativa de Custos da Pós Migração](https://calculator.aws/#/estimate?id=e55363d2fe38987bf0ba08693e51455473e227d7)
 
-![estimativaPosMigracao](./estimativaPosMigracao.png)
+![estimativaPosMigracao](./img/estimativa/estimativaPosMigracao.png)
 
 | Ícone | Nome | Custo (USD) |
 |------------|------------------------------|-------------|
@@ -191,8 +207,8 @@ Decidimos criar três ambientes de infraestrutura: Desenvolvimento, Homologaçã
   - Acesso restrito aos desenvolvedores.
   - Testes automatizados são executados para garantir a qualidade do código.
 
-![AmbienteDeDev](./EKSDev.drawio.png)
-![estimativaEKSDev](./estimativaDevEKS.png)
+![AmbienteDeDev](./img/diagramas/EKSDev.drawio.png)
+![estimativaEKSDev](./img/estimativa/estimativaDevEKS.png)
 
 - **Ambiente de Homologação**:
   - Utiliza a branch `homolog` no GitLab.
@@ -201,8 +217,8 @@ Decidimos criar três ambientes de infraestrutura: Desenvolvimento, Homologaçã
   - Transição da branch `dev` para `homolog` é feita manualmente através de pull requests aprovados.
   - Testes manuais e automatizados são realizados para validar as funcionalidades.
 
-![AmbienteDeHomologação](./EKSHomolog.drawio.png)
-![estimativaEKSHomologacao](./estimativaEKSHomologacao.png)
+![AmbienteDeHomologação](./img/diagramas/EKSHomolog.drawio.png)
+![estimativaEKSHomologacao](./img/estimativa/estimativaEKSHomologacao.png)
 
 - **Ambiente de Produção**:
   - Utiliza a branch `main` no GitLab.
@@ -211,9 +227,9 @@ Decidimos criar três ambientes de infraestrutura: Desenvolvimento, Homologaçã
   - Transição da branch `homolog` para `main` é feita após aprovação final.
   - Monitoramento contínuo e testes de desempenho são realizados para garantir a estabilidade.
 
-![AmbienteDeProd](./EKSProd.drawio.png)
+![AmbienteDeProd](./img/diagramas/EKSProd.drawio.png)
 [Link para estimativa de Custos da Modernização](https://calculator.aws/#/estimate?id=4ca7450494d03d50d2304178975068e37db647e3)
-![estimativaEKSProd](./estimativaEKSProd.png)
+![estimativaEKSProd](./img/estimativa/estimativaEKSProd.png)
 
 ## Modernização: Explicação das Ferramentas
 
