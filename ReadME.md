@@ -198,7 +198,7 @@ Decidimos criar três ambientes de infraestrutura: Desenvolvimento, Homologaçã
   - Monitoramento contínuo e testes de desempenho são realizados para garantir a estabilidade.
 
 ![AmbienteDeProd](./EKSProd.drawio.png)
-![estimativaEKSProd](./estimativaProdEKS.png)
+![estimativaEKSProd](./estimativaEKSProd.png)
 
 ## Modernização: Explicação das Ferramentas
 
