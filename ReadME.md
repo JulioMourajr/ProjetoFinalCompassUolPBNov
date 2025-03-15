@@ -162,7 +162,37 @@ Após fazer a migração e realizar todos os testes, a estrutura utilizará as s
 | <img src="https://cloud-icons.onemodel.app/aws/Resource-Icons_01312023/Res_Networking-and-Content-Delivery/Res_48_Light/Res_Amazon-VPC_NAT-Gateway_48_Light.png" width="50"> | NAT (Network Address Translation) | Serviço de tradução de endereços de rede. |
 | <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Storage/64/Arch_AWS-Backup_64@5x.png" width="50"> | Backup | Serviço de backup. |
 
-![Modernização](./Eks.png)
+## Separação de Ambientes
+
+Decidimos criar três ambientes de infraestrutura: Desenvolvimento, Homologação e Produção. Cada ambiente possui suas próprias branches no GitLab, com testes manuais e automatizados, e acessos separados por políticas de segurança.
+
+- **Ambiente de Desenvolvimento**:
+  - Utiliza a branch `dev` no GitLab.
+  - Focado em desenvolvimento e testes iniciais.
+  - Acesso restrito aos desenvolvedores.
+  - Testes automatizados são executados para garantir a qualidade do código.
+
+![AmbienteDeDev](./EKSDev.drawio.png)
+
+- **Ambiente de Homologação**:
+  - Utiliza a branch `homolog` no GitLab.
+  - Ambiente que se aproxima do produto final.
+  - Acesso restrito a desenvolvedores e equipe de QA.
+  - Transição da branch `dev` para `homolog` é feita manualmente através de pull requests aprovados.
+  - Testes manuais e automatizados são realizados para validar as funcionalidades.
+
+![AmbienteDeHomologação](./EKSHomolog.drawio.png)
+
+- **Ambiente de Produção**:
+  - Utiliza a branch `main` no GitLab.
+  - Ambiente que está em produção e acessível aos usuários finais.
+  - Acesso restrito à equipe de operações.
+  - Transição da branch `homolog` para `main` é feita após aprovação final.
+  - Monitoramento contínuo e testes de desempenho são realizados para garantir a estabilidade.
+
+![AmbienteDeProd](./EKSProd.drawio.png)
+
+![Modernização](./EKSProd.drawio.png)
 
 ## Modernização: Explicação das Ferramentas
 
