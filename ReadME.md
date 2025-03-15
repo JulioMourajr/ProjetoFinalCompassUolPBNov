@@ -189,6 +189,7 @@ Decidimos criar três ambientes de infraestrutura: Desenvolvimento, Homologaçã
   - Testes manuais e automatizados são realizados para validar as funcionalidades.
 
 ![AmbienteDeHomologação](./EKSHomolog.drawio.png)
+![estimativaEKSHomologacao](./estimativaEKSHomologacao.png)
 
 - **Ambiente de Produção**:
   - Utiliza a branch `main` no GitLab.
@@ -198,6 +199,7 @@ Decidimos criar três ambientes de infraestrutura: Desenvolvimento, Homologaçã
   - Monitoramento contínuo e testes de desempenho são realizados para garantir a estabilidade.
 
 ![AmbienteDeProd](./EKSProd.drawio.png)
+[Link para estimativa de Custos da Modernização](https://calculator.aws/#/estimate?id=4ca7450494d03d50d2304178975068e37db647e3)
 ![estimativaEKSProd](./estimativaEKSProd.png)
 
 ## Modernização: Explicação das Ferramentas
