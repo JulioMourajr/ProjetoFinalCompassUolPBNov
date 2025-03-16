@@ -232,6 +232,18 @@ Decidimos criar três ambientes de infraestrutura: Desenvolvimento, Homologaçã
 [Link para estimativa de Custos da Modernização](https://calculator.aws/#/estimate?id=4ca7450494d03d50d2304178975068e37db647e3)
 ![estimativaEKSProd](./img/estimativa/estimativaEKSProd.png)
 
+| Ícone | Nome | Custo (USD) |
+|------------|------------------------------|-------------|
+| <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRULf2JOHbvkPux8pEzQrkH70TVSpfgRMzgQA&s" width="50"> | **Amazon EC2 (Front-End)** | 12,26 |
+| <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRULf2JOHbvkPux8pEzQrkH70TVSpfgRMzgQA&s" width="50"> | **Amazon EC2 (Back-End)** | 24,38 |
+| <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7L7fI-Ozxh2ni9T2E7rgX_CU-VNMOpoXfwpIxYIaifUcJL_NQ0ZJi8mGHWNRdiFXmres&usqp=CAU" width="50"> | **Amazon RDS for MySQL** | 706,30 |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Networking-Content-Delivery/64/Arch_AWS-Elastic-Load-Balancing_64@5x.png" width="50"> | **Elastic Load Balancing** | 33,32 |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Security-Identity-Compliance/64/Arch_AWS-WAF_64@5x.png" width="50"> | **AWS Web Application Firewall (WAF)** | 0,00 |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Networking-Content-Delivery/64/Arch_Amazon-CloudFront_64@5x.png" width="50"> | **Amazon CloudFront** | 0,00 |
+| <img src="https://github.com/user-attachments/assets/74224709-c040-46dd-858c-6307886fb90d" width="50"> | **Amazon Virtual Private Cloud (VPC)** | 74,70 |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Networking-Content-Delivery/64/Arch_Amazon-Route-53_64@5x.png" width="50"> | **Amazon Route 53** | 15,50 |
+
+
 ## Modernização: Explicação das Ferramentas
 
 1. **Amazon ECR (Elastic Container Registry)**:
