@@ -232,16 +232,21 @@ Decidimos criar três ambientes de infraestrutura: Desenvolvimento, Homologaçã
 [Link para estimativa de Custos da Modernização](https://calculator.aws/#/estimate?id=4ca7450494d03d50d2304178975068e37db647e3)
 ![estimativaEKSProd](./img/estimativa/estimativaEKSProd.png)
 
-| Ícone | Nome | Custo (USD) |
+| Ícone | Nome | Custo mensal (USD) |
 |------------|------------------------------|-------------|
-| <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRULf2JOHbvkPux8pEzQrkH70TVSpfgRMzgQA&s" width="50"> | **Amazon EC2 (Front-End)** | 12,26 |
-| <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRULf2JOHbvkPux8pEzQrkH70TVSpfgRMzgQA&s" width="50"> | **Amazon EC2 (Back-End)** | 24,38 |
-| <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7L7fI-Ozxh2ni9T2E7rgX_CU-VNMOpoXfwpIxYIaifUcJL_NQ0ZJi8mGHWNRdiFXmres&usqp=CAU" width="50"> | **Amazon RDS for MySQL** | 706,30 |
-| <img src="https://cloud-icons.onemodel.app/aws/Resource-Icons_01312023/Res_Networking-and-Content-Delivery/Res_48_Light/Res_Elastic-Load-Balancing_Application-Load-Balancer_48_Light.png" width="50"> | **Elastic Load Balancing** | 33,32 |
-| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Security-Identity-Compliance/64/Arch_AWS-WAF_64@5x.png" width="50"> | **AWS Web Application Firewall (WAF)** | 0,00 |
-| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Networking-Content-Delivery/64/Arch_Amazon-CloudFront_64@5x.png" width="50"> | **Amazon CloudFront** | 0,00 |
-| <img src="https://github.com/user-attachments/assets/74224709-c040-46dd-858c-6307886fb90d" width="50"> | **Amazon Virtual Private Cloud (VPC)** | 74,70 |
-| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Networking-Content-Delivery/64/Arch_Amazon-Route-53_64@5x.png" width="50"> | **Amazon Route 53** | 15,50 |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Compute/64/Arch_Amazon-EC2_64.png" width="50"> | **Amazon EC2 (Front-End)** | 15,04 |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Compute/64/Arch_Amazon-EC2_64.png" width="50"> | **Amazon EC2 (Back-End)** | 27,45 |
+| <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7L7fI-Ozxh2ni9T2E7rgX_CU-VNMOpoXfwpIxYIaifUcJL_NQ0ZJi8mGHWNRdiFXmres&usqp=CAU" width="50"> | **Amazon RDS for MySQL** | 6.030,92 |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Containers/64/Arch_Amazon-Elastic-Kubernetes-Service_64.png" width="50"> | **Amazon EKS** | 73,00 |
+| <img src="https://cdn.worldvectorlogo.com/logos/amazon-s3-simple-storage-service.svg" width="50"> | **Amazon S3** | 23,55 |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Containers/64/Arch_Amazon-Elastic-Container-Registry_64.png" width="50"> | **Amazon Elastic Container Registry (ECR)** | 5,00 |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Networking-Content-Delivery/64/Arch_Amazon-Route-53_64.png" width="50"> | **Amazon Route 53** | 3,00 |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Security-Identity-Compliance/64/Arch_AWS-WAF_64.png" width="50"> | **AWS Web Application Firewall (WAF)** | 10,00 |
+| <img src="https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Networking-Content-Delivery/64/Arch_Amazon-CloudFront_64.png" width="50"> | **Amazon CloudFront** | 0,00 |
+| <img src="https://cloud-icons.onemodel.app/aws/Resource-Icons_01312023/Res_Networking-and-Content-Delivery/Res_48_Light/Res_Amazon-VPC_Internet-Gateway_48_Light.png" width="50"> | **Amazon Virtual Private Cloud (VPC)** | 65,88 |
+
+
+
 
 
 ## Modernização: Explicação das Ferramentas
@@ -305,7 +310,7 @@ Decidimos criar três ambientes de infraestrutura: Desenvolvimento, Homologaçã
 15. **Backup**:
     - **O que faz**: É um serviço que permite fazer backup e restaurar dados de recursos AWS.
     - **Importância**: Garante a segurança dos dados, permitindo a recuperação em caso de falha ou desastre.
-      
+
 16. **GitLab**:
     - **O que faz**: É uma plataforma de DevOps que fornece repositórios Git, CI/CD, gerenciamento de projetos, entre outros.
     - **Importância**: Facilita a colaboração entre desenvolvedores, automatiza pipelines de CI/CD e gerencia o ciclo de vida do desenvolvimento de software.
@@ -313,7 +318,6 @@ Decidimos criar três ambientes de infraestrutura: Desenvolvimento, Homologaçã
 17. **Terraform**:
     - **O que faz**: É uma ferramenta de infraestrutura como código (IaC) que permite definir e provisionar infraestrutura através de arquivos de configuração.
     - **Importância**: Automatiza a criação e o gerenciamento de infraestrutura, garantindo consistência e facilitando a replicação de ambientes.
-
 
 ## Conclusão
 
