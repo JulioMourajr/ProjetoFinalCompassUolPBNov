@@ -8,7 +8,7 @@
     - [O que será utilizado?](#o-que-será-utilizado)
     - [Pré-requisitos](#pré-requisitos)
     - [Atividades Necessárias](#atividades-necessárias)
-4. [Estimativa dos custos da Migração](#estimativa-dos-custos-da-migração)
+    - [Estimativa dos custos da Migração](#estimativa-dos-custos-da-migração)
 5. [Pós migração](#pós-migração)
 6. [Etapa 2: Modernização Kubernetes](#etapa-2-modernização-kubernetes)
     - [Atividades Necessárias para a Migração](#atividades-necessárias-para-a-migração)
